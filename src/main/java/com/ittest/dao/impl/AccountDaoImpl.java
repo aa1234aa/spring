@@ -5,6 +5,6 @@ import com.ittest.dao.IAcountDao;
 public class AccountDaoImpl implements IAcountDao {
     @Override
     public void saveAccount() {
-
+        System.out.println("保存账户");
     }
 }

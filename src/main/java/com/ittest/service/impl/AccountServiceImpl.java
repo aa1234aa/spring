@@ -7,5 +7,6 @@ import com.ittest.service.IAccountService;
 public class AccountServiceImpl implements IAccountService {
     private IAcountDao acountDao=new AccountDaoImpl();
     public void saveAccount() {
+        acountDao.saveAccount();
     }
 }
