@@ -1,3 +1,4 @@
+/*
 package com.ittest.factory;
 
 import java.io.IOException;
@@ -7,12 +8,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+*/
 /*创建bean对象的工厂
 * Bean在计算机英语中，有可重用组件的含义
 * javabean》实体类
-* */
+* *//*
+
 public class BeanFactory {
-    /*定义一个propertie对象*/
+    */
+/*定义一个propertie对象*//*
+
     private static Properties props;
     //定义1个Map，来存放我们创建的对象 ，我们把它称为容器
     private static Map<String, Object> beans;
@@ -20,7 +25,9 @@ public class BeanFactory {
     //使用静态代码块为peoperties对象赋值
     static {
         try {
-            /*实例化对象*/
+            */
+/*实例化对象*//*
+
             props = new Properties();
             //获取properties文件的流对象
             InputStream in = BeanFactory.class.getClassLoader().getResourceAsStream("bean.properties");
@@ -46,9 +53,12 @@ public class BeanFactory {
         }
     }
 
-    /*根据bean的名称获取bean对象*/
+    */
+/*根据bean的名称获取bean对象*//*
+
     public static Object getBean(String beanName) {
-       /* Object bean=null;
+       */
+/* Object bean=null;
         try {
             String beanPath=props.getProperty(beanName);
             bean=Class.forName(beanPath).newInstance();
@@ -56,7 +66,9 @@ public class BeanFactory {
             e.printStackTrace();
         }
         return bean;
-    }*/
+    }*//*
+
         return beans.get(beanName);
     }
 }
+*/
