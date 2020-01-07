@@ -9,12 +9,9 @@
     <bookmark url="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java" line="30" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edad4359-de1d-4069-9041-29f0b365ce04" name="Default" comment="initialspring">
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/InstanseFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/StaticFactory.java" afterDir="false" />
+    <list default="true" id="edad4359-de1d-4069-9041-29f0b365ce04" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../spring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/BeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../spring/src/main/resource/bean.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../spring/src/main/resource/bean.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="bean.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../spring/src/main/resource/bean.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="15" column="106" selection-start-line="15" selection-start-column="106" selection-end-line="15" selection-end-column="106" />
+            <state relative-caret-position="726">
+              <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -94,8 +91,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+            <state relative-caret-position="322">
+              <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -279,11 +276,12 @@
       <file leaf-file-name="AccountServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="513">
+              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding>
                 <element signature="e#314#315#0" expanded="true" />
                 <element signature="e#350#351#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -311,11 +309,11 @@
         <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/IAcountService.java" />
         <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountService.java" />
         <option value="$PROJECT_DIR$/../spring/pom.xml" />
-        <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/InstanseFactory.java" />
         <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/BeanFactory.java" />
-        <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java" />
         <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/StaticFactory.java" />
+        <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java" />
         <option value="$PROJECT_DIR$/../spring/src/main/resource/bean.xml" />
       </list>
     </option>
@@ -841,7 +839,7 @@
       <option name="presentableId" value="Default" />
       <updated>1577957074163</updated>
       <workItem from="1577957077514" duration="2328000" />
-      <workItem from="1577959482851" duration="17445000" />
+      <workItem from="1577959482851" duration="20094000" />
     </task>
     <task id="LOCAL-00001" summary="initialspring">
       <created>1577960053101</created>
@@ -878,11 +876,18 @@
       <option name="project" value="LOCAL" />
       <updated>1578300196782</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="initialspring">
+      <created>1578368129660</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578368129660</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19773000" />
+    <option name="totallyTimeSpent" value="22422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="2576" height="1416" extended-state="6" />
@@ -1223,17 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/factory/InstanseFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1242,6 +1236,18 @@
             <element signature="imports" expanded="true" />
             <element signature="e#257#258#0" expanded="true" />
             <element signature="e#303#304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/service/impl/AccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+          <folding>
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1260,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../spring/src/main/java/com/ittest/ui/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        <state relative-caret-position="322">
+          <caret line="30" column="74" selection-start-line="30" selection-start-column="74" selection-end-line="30" selection-end-column="74" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1270,8 +1276,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../spring/src/main/resource/bean.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="106" selection-start-line="15" selection-start-column="106" selection-end-line="15" selection-end-column="106" />
+        <state relative-caret-position="726">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
         </state>
       </provider>
     </entry>

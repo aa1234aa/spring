@@ -13,8 +13,21 @@
     <bean id="accountService" factory-bean="instanseFactory" factory-method="getAccountService"></bean>-->
     <!--使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器）
    -->
-    <bean id="accountService" class="com.ittest.factory.StaticFactory" factory-method="getAccountService" ></bean>
+   <!-- <bean id="accountService" class="com.ittest.factory.StaticFactory" factory-method="getAccountService" ></bean>-->
     <!--bean的作用范围
     scope属性  取值  singleton 单例   prototype 多例  request 请求范围 session作用于应用的会话范围  global session作用于集群的绘画范围-->
-
+   <!--单例对象
+   出生：  容器创建    活着：   只要容器还在  对象一直活着   死亡：   容器销毁 对象消亡   对象的生命周期和容器相同
+   多例对象  出生：当我们使用对象时spring框架为我们创建    或者：对象只要在我们使用或称中就一直活着，死亡：当对象长时间不用   且没有别的对象引用时，由java的垃圾回收器回收
+   -->
+    <bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl" scope="prototype" init-method="init" destroy-method="destory"></bean>
+    <!--依赖注入  能注入的数据有三类：
+    基本类型和String
+    其他bean类型
+    复杂类型/集合类型
+    注入的方式，有三种
+    第一种：使用构造函数提供
+    二：set方法
+    三 ：注解提供
+    -->
 </beans>

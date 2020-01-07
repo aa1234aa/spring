@@ -15,4 +15,11 @@ public class AccountServiceImpl implements IAccountService {
         acountDao.saveAccount();
 
     }
+    public void init() {
+        System.out.println("初始化");
+
+    }
+    public void destory() {
+        System.out.println("破坏");
+    }
 }
