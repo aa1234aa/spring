@@ -3,7 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!--把对象的创建叫给spring创建-->
-    <bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl"></bean>
+    <!--把对象的创建叫给spring创建    在spring配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时，采用的是默认构造函数
+    创建bean对象，此时如果类种没有构造函数，则对象午发创建-->
+   <!-- <bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl"></bean>
     <bean id="accountDao" class="com.ittest.dao.impl.AccountDaoImpl"></bean>
+    -->
+    <!--第二种方式：使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入spring容器）-->
+<!--    <bean id="instanseFactory" class="com.ittest.factory.InstanseFactory"></bean>
+    <bean id="accountService" factory-bean="instanseFactory" factory-method="getAccountService"></bean>-->
+    <!--使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器）
+   -->
+    <bean id="accountService" class="com.ittest.factory.StaticFactory" factory-method="getAccountService" ></bean>
+    <!--bean的作用范围
+    scope属性  取值  singleton 单例   prototype 多例  request 请求范围 session作用于应用的会话范围  global session作用于集群的绘画范围-->
+
 </beans>

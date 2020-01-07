@@ -29,9 +29,9 @@ public class Client {
         ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
        // 根据id获取bean对象
         IAccountService as=(IAccountService) ac.getBean("accountService");
-        IAcountDao adao=ac.getBean("accountDao",IAcountDao.class);
+        //IAcountDao adao=ac.getBean("accountDao",IAcountDao.class);
         System.out.println(as);
-        System.out.println(adao);
+       // System.out.println(adao);
 
         //beanFactory
      /*   Resource resource=new ClassPathResource("bean.xml");
