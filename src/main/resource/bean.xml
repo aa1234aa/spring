@@ -20,7 +20,7 @@
    出生：  容器创建    活着：   只要容器还在  对象一直活着   死亡：   容器销毁 对象消亡   对象的生命周期和容器相同
    多例对象  出生：当我们使用对象时spring框架为我们创建    或者：对象只要在我们使用或称中就一直活着，死亡：当对象长时间不用   且没有别的对象引用时，由java的垃圾回收器回收
    -->
-    <bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl" scope="prototype" init-method="init" destroy-method="destory"></bean>
+    <!--<bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl" scope="prototype" init-method="init" destroy-method="destory"></bean>-->
     <!--依赖注入  能注入的数据有三类：
     基本类型和String
     其他bean类型
@@ -30,4 +30,28 @@
     二：set方法
     三 ：注解提供
     -->
+    <!--构造函数注入
+    使用的标签：constructor-arg
+    标签内部的位置：bean标签的内部
+    标签的属性：type   index   name(常用) value ref(指定其他的bean类型数据)
+    优势：在获取bean对象时，注入数据是必须的操作，否则对象午发创建成功
+    弊端：改变了bean对象的实例化方式，是我们在创建对象时，如果用不到这些数据，也必须创建
+    -->
+<!--   <bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl">
+       <constructor-arg name="name" value="安安"></constructor-arg>
+       <constructor-arg name="age" value="2"></constructor-arg>
+       <constructor-arg name="date" ref="now"></constructor-arg>
+   </bean>-->
+    <bean id="now" class="java.util.Date"></bean>
+    <!--set注入
+     标签：property
+     出现的位置 bean的内部
+     标签的属性：name   value   ref
+     优势：创建对象没有明确的限制，可以直接使用默认的构造函数
+     弊端：如果某个成员必须有值，则获取对象有可能set方法美哟执行-->
+    <bean id="accountService2" class="com.ittest.service.impl.AccountServiceImpl2">
+        <property name="name" value="黄熙雯"></property>
+        <property name="age" value="3"></property>
+        <property name="date" ref="now"></property>
+    </bean>
 </beans>
