@@ -3,7 +3,10 @@ package com.ittest.service.impl;
 import com.ittest.dao.IAcountDao;
 import com.ittest.service.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 /*AutoWired 按照类型注入
 * springioc是map结构<String  Object>
 
@@ -11,10 +14,13 @@ import org.springframework.stereotype.Component;
 
 @Component(value = "accountService")
 public class AccountServiceImpl3 implements IAccountService {
+   /* 两个配合使用或者单独使用 @Resource
     @Autowired
-  private IAcountDao acountDao2=null;
+    @Qualifier("acountDao1")*/
+   @Resource(name = "acountDao1")
+  private IAcountDao acountDao=null;
 
     public void saveAccount() {
-      acountDao2.saveAccount();
+      acountDao.saveAccount();
     }
 }
