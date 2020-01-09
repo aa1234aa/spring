@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 @Component(value = "accountService")
 public class AccountServiceImpl3 implements IAccountService {
     @Autowired
-  private IAcountDao acountDao;
+  private IAcountDao acountDao2=null;
 
     public void saveAccount() {
-      acountDao.saveAccount();
+      acountDao2.saveAccount();
     }
 }

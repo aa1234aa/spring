@@ -4,9 +4,9 @@ import com.ittest.dao.IAcountDao;
 import org.springframework.stereotype.Repository;
 
 /*账户的持久层实现类*/
-@Repository("accountDao")
+@Repository("acountDao1")
 public class AccountDaoImpl implements IAcountDao {
     public void saveAccount() {
-        System.out.println("保存账户");
+        System.out.println("保存账户111111");
     }
 }
