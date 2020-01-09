@@ -1,42 +1,34 @@
 package com.ittest.service.impl;
 
-import com.ittest.service.IAccountService;
 
-import java.util.Date;
+import com.ittest.service.IAccountService;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /*业务层实现类*/
-public class AccountServiceImpl2 implements IAccountService {
-    public void setName(String name) {
-        this.name = name;
-    }
+public class AccountServiceImpl2 {
 
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    //private IAcountDao acountDao=new AccountDaoImpl();
-    private String name;
-    private Integer age;
-    private Date date;
-
-    public void saveAccount() {
-        //acountDao.saveAccount();
-        System.out.println(name+"..."+age+"..."+date);
+    @Test
+    public void testFindAll(){
+        ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
+        IAccountService as=ac.getBean("accountService",IAccountService.class);
 
     }
-
-
-
-
-    /*   public void init() {
-        System.out.println("初始化");
+    @Test
+    public void testFindOne(){
 
     }
-    public void destory() {
-        System.out.println("破坏");
-    }*/
+    @Test
+    public void testSave(){
+
+    }
+    @Test
+    public void testUpdate(){
+
+    }
+    @Test
+    public void testDelete(){
+
+    }
 }

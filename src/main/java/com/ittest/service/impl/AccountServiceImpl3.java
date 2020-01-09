@@ -16,7 +16,10 @@ import javax.annotation.Resource;
 public class AccountServiceImpl3 implements IAccountService {
    /* 两个配合使用或者单独使用 @Resource
     @Autowired
-    @Qualifier("acountDao1")*/
+    @Qualifier("acountDao1")
+    value 用于注入基本类型和string类型的数据
+    @scope()  singleton 单例   protitype多例    生命周期  preDestory销毁   PostContrust初始化
+    */
    @Resource(name = "acountDao1")
   private IAcountDao acountDao=null;
 
