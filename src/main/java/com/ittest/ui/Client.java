@@ -1,5 +1,6 @@
 package com.ittest.ui;
 
+import com.ittest.dao.IAcountDao;
 import com.ittest.service.IAccountService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,8 +24,10 @@ public class Client {
         ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
        // 根据id获取bean对象
         IAccountService as=(IAccountService) ac.getBean("accountService");
-        //IAcountDao adao=ac.getBean("accountDao",IAcountDao.class);
+        //IAcountDao adao=ac.getBean("accountDao", IAcountDao.class);
         as.saveAccount();
+        //adao.saveAccount();
+
        // System.out.println(adao);
 
         //beanFactory
