@@ -58,8 +58,22 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.15</version>
+      <version>8.0.18</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
+    <dependency>
+      <groupId>commons-dbutils</groupId>
+      <artifactId>commons-dbutils</artifactId>
+      <version>1.7</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/c3p0/c3p0 连接池-->
+    <dependency>
+      <groupId>c3p0</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.1.2</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>

@@ -12,18 +12,18 @@ import javax.annotation.Resource;
 
 *   */
 
-@Component(value = "accountService")
-public class AccountServiceImpl3 implements IAccountService {
+@Component(value = "accountService1")
+public class AccountServiceImpl3 {
    /* 两个配合使用或者单独使用 @Resource
     @Autowired
     @Qualifier("acountDao1")
     value 用于注入基本类型和string类型的数据
     @scope()  singleton 单例   protitype多例    生命周期  preDestory销毁   PostContrust初始化
     */
-   @Resource(name = "acountDao1")
+   @Resource(name = "acountDao")
   private IAcountDao acountDao=null;
 
     public void saveAccount() {
-      acountDao.saveAccount();
+      //acountDao.saveAccount();
     }
 }

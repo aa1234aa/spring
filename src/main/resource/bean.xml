@@ -8,7 +8,9 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--告知spring在创建容器时要扫描的包，配置所需要的标签不是在beans的约束中，而是一个名称为context名称空间和约束中-->
-    <context:component-scan base-package="com.ittest"></context:component-scan>
+   <!-- <context:component-scan base-package="com.ittest"></context:component-scan>-->
+
+
 
     <!--把对象的创建叫给spring创建    在spring配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时，采用的是默认构造函数
     创建bean对象，此时如果类种没有构造函数，则对象午发创建-->
@@ -61,4 +63,20 @@
         <property name="age" value="3"></property>
         <property name="date" ref="now"></property>
     </bean>-->
+    <!--告知spring在创建容器时要扫描的包，配置所需要的标签不是在beans的约束中，而是一个名称为context名称空间和约束中-->
+    <context:component-scan base-package="com.ittest"></context:component-scan>
+    <!--配置QueryRunner-->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+        <!--注入数据源-->
+        <constructor-arg name="ds" ref="dataSource"></constructor-arg>
+    </bean>
+
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!--连接数据库的必备信息-->
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/eesy?serverTimezone=UTC"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="root"></property>
+    </bean>
 </beans>
