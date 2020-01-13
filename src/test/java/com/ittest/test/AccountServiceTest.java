@@ -1,24 +1,36 @@
 package com.ittest.test;
 
+import com.ittest.config.JdbcConfig;
 import com.ittest.config.SpringConfigration;
 import com.ittest.domain.Account;
 import com.ittest.service.IAccountService;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = SpringConfigration.class)
 public class AccountServiceTest {
-
+    private ApplicationContext ac;
+    private IAccountService as;
+    @Before
+   public void init(){
+       //获取容器
+       //ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
+        ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
+       //得到业务层对象
+        as=ac.getBean("accountService",IAccountService.class);
+   }
     @Test
     public void testFindAll(){
-        //获取容器
-        //ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
-        ApplicationContext ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
-        //得到业务层对象
-        IAccountService as=ac.getBean("accountService",IAccountService.class);
+
         //执行方法
         List<Account> accounts=as.findAllAccount();
         for (Account account:accounts){
@@ -27,10 +39,6 @@ public class AccountServiceTest {
     }
     @Test
     public void testFindOne(){
-        //获取容器
-        ApplicationContext ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
-        //得到业务层对象
-        IAccountService as=ac.getBean("accountService",IAccountService.class);
         //执行方法
        Account  account=as.findAccountById(1);
         System.out.println(account);
@@ -40,20 +48,11 @@ public class AccountServiceTest {
         Account account=new Account();
         account.setName("test");
         account.setMoney(1.222f);
-
-        //获取容器
-        ApplicationContext ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
-        //得到业务层对象
-        IAccountService as=ac.getBean("accountService",IAccountService.class);
         //执行方法
         as.saveAccount(account);
     }
     @Test
     public void testUpdate(){
-        //获取容器
-        ApplicationContext ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
-        //得到业务层对象
-        IAccountService as=ac.getBean("accountService",IAccountService.class);
         //执行方法
         Account account=as.findAccountById(4);
         account.setName("anan");
@@ -61,10 +60,6 @@ public class AccountServiceTest {
     }
     @Test
     public void testDelete(){
-        //获取容器
-        ApplicationContext ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
-        //得到业务层对象
-        IAccountService as=ac.getBean("accountService",IAccountService.class);
         //执行方法
         as.deleteAccount(6);
     }
