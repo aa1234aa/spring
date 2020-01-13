@@ -63,6 +63,10 @@ public class AccountServiceTest {
         //执行方法
         as.deleteAccount(6);
     }
+    @Test
+    public void testTransfer(){
+        as.transfer("aaa","bbb",10f);
+    }
 
 
 }

@@ -18,4 +18,6 @@ public interface IAccountService {
     void updateAccount(Account account);
     /*删除*/
     void deleteAccount(Integer accountId);
+    /*转账(转出，转入，转账金额)*/
+    void transfer(String sourceName,String targetName,Float money);
 }
