@@ -28,4 +28,7 @@ public class ConnectionUtils {
                     RuntimeException(e);
         }
     }
+    public void removeConnection(){
+        tl.remove();
+    }
 }
