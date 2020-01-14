@@ -14,9 +14,14 @@
 
     <!--把对象的创建叫给spring创建    在spring配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时，采用的是默认构造函数
     创建bean对象，此时如果类种没有构造函数，则对象午发创建-->
-    <!--<bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl3"></bean>-->
-    <!--<bean id="accountDao" class="com.ittest.dao.impl.AccountDaoImpl"></bean>
-     -->
+    <bean id="accountService" class="com.ittest.service.impl.AccountServiceImpl">
+        <property name="txManger" ref="txManger"></property>
+        <property name="acountDao" ref="accountDao"></property>
+    </bean>
+    <bean id="accountDao" class="com.ittest.dao.impl.AccountDaoImpl">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+        <property name="runner" ref="runner"></property>
+    </bean>
     <!--第二种方式：使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入spring容器）-->
 <!--    <bean id="instanseFactory" class="com.ittest.factory.InstanseFactory"></bean>
     <bean id="accountService" factory-bean="instanseFactory" factory-method="getAccountService"></bean>-->
@@ -64,19 +69,28 @@
         <property name="date" ref="now"></property>
     </bean>-->
     <!--告知spring在创建容器时要扫描的包，配置所需要的标签不是在beans的约束中，而是一个名称为context名称空间和约束中-->
-<!--    <context:component-scan base-package="com.ittest"></context:component-scan>-->
-    <!--配置QueryRunner-->
-    <!--<bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
-        &lt;!&ndash;注入数据源&ndash;&gt;
+    <!--<context:component-scan base-package="com.ittest"></context:component-scan>-->
+  <!--  配置QueryRunner-->
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype">
+
         <constructor-arg name="ds" ref="dataSource"></constructor-arg>
     </bean>
 
-    &lt;!&ndash; 配置数据源 &ndash;&gt;
+    <!-- 配置数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        &lt;!&ndash;连接数据库的必备信息&ndash;&gt;
+        <!--连接数据库的必备信息-->
         <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/eesy?serverTimezone=UTC"></property>
         <property name="user" value="root"></property>
         <property name="password" value="root"></property>
-    </bean>-->
+    </bean>
+    <!--配置Connection工具类-->
+    <bean id="connectionUtils" class="com.ittest.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--配置事务管理器-->
+    <bean id="txManger" class="com.ittest.utils.TransactionManager">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+
 </beans>
