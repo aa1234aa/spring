@@ -9,7 +9,14 @@
 
     <!--告知spring在创建容器时要扫描的包，配置所需要的标签不是在beans的约束中，而是一个名称为context名称空间和约束中-->
    <!-- <context:component-scan base-package="com.ittest"></context:component-scan>-->
-
+    <!--配置代理的service-->
+    <bean id="proxyAccountService" factory-bean="beanFactoryTest" factory-method="getAccountService"></bean>
+  <!--配置beanfactory-->
+    <bean id="beanFactoryTest" class="com.ittest.factory.BeanFactoryTest">
+        <!--注入service-->
+        <property name="accountService" ref="accountService"></property>
+        <property name="txManger" ref="txManger"></property>
+    </bean>
 
 
     <!--把对象的创建叫给spring创建    在spring配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时，采用的是默认构造函数

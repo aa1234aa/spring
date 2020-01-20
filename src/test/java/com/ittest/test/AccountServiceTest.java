@@ -7,6 +7,7 @@ import com.ittest.service.IAccountService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,6 +20,8 @@ import java.util.List;
 @ContextConfiguration(classes = SpringConfigration.class)
 public class AccountServiceTest {
     private ApplicationContext ac;
+    @Autowired
+    @Qualifier("proxyAccountService")
     private IAccountService as;
     @Before
    public void init(){
