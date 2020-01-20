@@ -15,7 +15,7 @@
     <bean id="beanFactoryTest" class="com.ittest.factory.BeanFactoryTest">
         <!--注入service-->
         <property name="accountService" ref="accountService"></property>
-        <property name="txManger" ref="txManger"></property>
+        <property name="txManager" ref="txManger"></property>
     </bean>
 
 

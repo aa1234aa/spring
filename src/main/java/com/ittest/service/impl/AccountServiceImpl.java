@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.List;
 
 /*业务层实现类*/
-@Service("accountService")
 public class AccountServiceImpl implements IAccountService {
     private TransactionManager txManger;
 
@@ -20,7 +19,6 @@ public class AccountServiceImpl implements IAccountService {
         this.txManger = txManger;
     }
 
-    @Autowired
     public void setAcountDao(IAcountDao acountDao) {
         this.acountDao = acountDao;
     }

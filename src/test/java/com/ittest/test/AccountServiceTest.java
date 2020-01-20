@@ -17,20 +17,20 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = SpringConfigration.class)
+@ContextConfiguration(locations = "classpath:bean.xml")
 public class AccountServiceTest {
     private ApplicationContext ac;
     @Autowired
     @Qualifier("proxyAccountService")
     private IAccountService as;
-    @Before
+/*    @Before
    public void init(){
        //获取容器
        //ApplicationContext ac=new ClassPathXmlApplicationContext("bean.xml");
         ac=new AnnotationConfigApplicationContext(SpringConfigration.class);
        //得到业务层对象
         as=ac.getBean("accountService",IAccountService.class);
-   }
+   }*/
     @Test
     public void testFindAll(){
 

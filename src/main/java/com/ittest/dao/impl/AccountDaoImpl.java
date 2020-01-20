@@ -12,7 +12,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /*账户的持久层实现类*/
-@Repository("acountDao")
 public class AccountDaoImpl  implements IAcountDao{
     @Autowired
     private QueryRunner runner;
