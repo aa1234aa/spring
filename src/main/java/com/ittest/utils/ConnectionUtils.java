@@ -9,28 +9,40 @@ import java.sql.SQLException;
 /*连接的工具类，它用于从数据源中获取一个连接，实现和线程的绑定*/
 
 public class ConnectionUtils {
-   private ThreadLocal<Connection> tl=new ThreadLocal<Connection>();
+
+    private ThreadLocal<Connection> tl = new ThreadLocal<Connection>();
+    //让spring注入
+    private DataSource dataSource;
 
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    private DataSource dataSource;
-   /*获取当前线程上的连接*/
-    public Connection getThreadConnection(){
-        Connection conn=tl.get();
+    /**
+     * 获取当前线程上的连接
+     * @return
+     */
+    public Connection getThreadConnection() {
+
         try {
-            if (conn==null){
-                conn=dataSource.getConnection();
+            //1.先从ThreadLocal上获取
+            Connection conn = tl.get();
+            //2.判断当前线程上上是否有连接
+            if (conn == null) {
+                //3.从数据源中获取一个连接，并且存入线程ThreadLocal中
+                conn = dataSource.getConnection();
                 tl.set(conn);
             }
+            //4返回当前线程上的连接
             return conn;
-
         } catch (Exception e) {
-            throw new
-                    RuntimeException(e);
+            throw new RuntimeException(e);
         }
     }
+
+    /**
+     * 把连接和线程解绑
+     */
     public void removeConnection(){
         tl.remove();
     }
