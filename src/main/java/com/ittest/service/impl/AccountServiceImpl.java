@@ -127,7 +127,7 @@ public class AccountServiceImpl implements IAccountService {
     public void transfer(String sourceName, String targetName, Float money) {
         try {
             //开启事务
-            txManger.beginTransaction();
+            //txManger.beginTransaction();
             /*根据名称查，转入，转出账户减钱，转入账户加钱，更新转出账户，更新转入账户*/
             Account source=acountDao.findAccountByName(sourceName);
             Account target=acountDao.findAccountByName(targetName);
@@ -137,13 +137,13 @@ public class AccountServiceImpl implements IAccountService {
             acountDao.updateAccount(target);
 
             //提交事务
-            txManger.commit();
+            //txManger.commit();
         } catch (Exception e) {
             //回滚
-            txManger.rollback();
+            //txManger.rollback();
         } finally {
             //释放连接
-            txManger.release();
+            //txManger.release();
         }
 
     }
